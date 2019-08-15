@@ -166,6 +166,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jdk环境变量配置”" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/16/jdk环境变量配置”/">j new jdk环境变量配置”</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/16/jdk环境变量配置”/" class="archive-article-date">
+  	<time datetime="2019-08-15T17:19:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.5之后不用再设置classpath<br>;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar<br>在系统-高级系统设置中的环境变量</p>
+<p><a href="https://imgchr.com/i/mVT4YT" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/08/16/mVT4YT.png" alt="mVT4YT.png"></a></p>
+<p><a href="https://imgchr.com/i/mVTRwq" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/08/16/mVTRwq.png" alt="mVTRwq.png"></a></p>
+<p>新建  变量名：JAVA_HOME 变量值：为jdk安装路径（如版本低的分清jdk和jre）</p>
+<p><a href="https://imgchr.com/i/mVThkV" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/08/16/mVThkV.png" alt="mVThkV.png"></a></p>
+<p>新建 path，有就不需要建了，直接选中【编辑】在最后方或者最前方输入<br>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</p>
+<p><a href="https://imgchr.com/i/mVTWT0" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/08/16/mVTWT0.png" alt="mVTWT0.png"></a>     </p>
+<p>新建新建一个classpath<br>值设置为 .   ;%JAVA_HOME%\bin;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</p>
+<p>验证环境变量配置是否成功<br>打开cmd（命令提示符），打开快捷键为 windows+R,输入cmd。<br>输入java,出行如图情况</p>
+<p><a href="https://imgchr.com/i/mVT2mn" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/08/16/mVT2mn.png" alt="mVT2mn.png"></a></p>
+<p>输入javac 出现如图情况</p>
+<p><a href="https://imgchr.com/i/mVT5fU" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/08/16/mVT5fU.png" alt="mVT5fU.png"></a></p>
+<p>最后输入java -version，出现下图（此处为版本号，可能不意义）</p>
+<p><a href="https://imgchr.com/i/mVTopF" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/08/16/mVTopF.png" alt="mVTopF.png"></a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/16/jdk环境变量配置”/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-springsource-tool-suite插件在eclipse的安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -188,8 +275,33 @@
       
         <p>安装的Spring版本应与Eclipse版本对应，详情如下链接：<br><a href="https://blog.csdn.net/mrxy969/article/details/80075323" target="_blank" rel="noopener">https://blog.csdn.net/mrxy969/article/details/80075323</a><br>不清楚eclipse版本号的，可以在eclipse的Help的查看版本号</p>
 <p>springsource-tool-suite插件<br>各版本下载链接见博客: <a href="https://blog.csdn.net/zhen_6137/article/details/79384798" target="_blank" rel="noopener">https://blog.csdn.net/zhen_6137/article/details/79384798</a><br>(因为官网现在只给出几个版本的下载链接)<br>spring官网下载地址（<a href="https://spring.io/tools/sts/all）" target="_blank" rel="noopener">https://spring.io/tools/sts/all）</a><br>下载完的包如下图:</p>
-<p><img src="./asset/img/empty.png" alt="empty"></p>
-<p><a href="https://imgchr.com/i/mEHPfS" target="_blank" rel="noopener"><img src=".//img/01.png" alt></a><br><img src="https://user.qzone.qq.com/3344199736/311/" alt="Alt"></p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEHKYT.png" alt></p>
+<p>历史版本地址(<a href="https://spring.io/tools/sts/legacy" target="_blank" rel="noopener">https://spring.io/tools/sts/legacy</a>) / (<a href="https://spring.io/tools3/sts/legacy" target="_blank" rel="noopener">https://spring.io/tools3/sts/legacy</a>)<br>注：历史版本下载的都是装好插件的eclipse(增强版的eclipse,比普通的eclipse多了安装配置好的插件,为spring公司开发的)，而非我们需要的插件.<br>详情请看: <a href="https://my.oschina.net/openoschina/blog/3013939" target="_blank" rel="noopener">https://my.oschina.net/openoschina/blog/3013939</a><br>总结来说springsource-tool-suite有安装在eclipse的插件和eclipse的增强版(与eclipse的界面基本一样)</p>
+<p>Spring的各版本jar包下载地址<br><a href="http://repo.spring.io/release/org/springframework/spring/(jar包)" target="_blank" rel="noopener">http://repo.spring.io/release/org/springframework/spring/(jar包)</a><br><img src="https://s2.ax1x.com/2019/08/15/mEHPfS.png" alt></p>
+<p>压缩包:</p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEHSTP.png" alt></p>
+<p>包目录:</p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEH9Ff.png" alt></p>
+<p>另附上common-logging.jar包下载地址<br><a href="http://commons.apache.org/proper/commons-logging/download_logging.cgi" target="_blank" rel="noopener">http://commons.apache.org/proper/commons-logging/download_logging.cgi</a></p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEHFSg.png" alt></p>
+<p>方法一:线下安装</p>
+<p>打开help-Install New Software</p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEHCY8.png" alt></p>
+<p>选择Add</p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEHklQ.png" alt></p>
+<p>选择Archieve,选择你的spring压缩包。Name的名字随便起。例如：sts3.3.0.Location选择你的压缩包路径</p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEHukV.png" alt></p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEHAyj.png" alt></p>
+<p>选择OK，弹出如下图，Name中选择4个有Spring IDE。取消Contact all update sites during install to find required software选择（否则安装会很慢，此为联网安装的插件）。</p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEHEOs.png" alt></p>
+<p>一路Next。安装完毕后出现如下图。点击Yes后，eclipse会重启。</p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEHZmn.png" alt></p>
+<p>在window里选择Preferences</p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEHewq.png" alt></p>
+<p>出现Spring和SpringSource,说明安装成功.</p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEHmT0.png" alt></p>
+<p><img src="https://s2.ax1x.com/2019/08/15/mEHZmn.png" alt></p>
+<hr>
 
       
 
