@@ -6,22 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hexo使用说明 | Wenshuai&#39;s Blog</title>
+  <title>hexo部署出现的一些问题 | Wenshuai&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="link方式（自定义方式）：">
-<meta name="keywords" content="随笔">
+<meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo使用说明">
-<meta property="og:url" content="http://yoursite.com/2019/08/16/hexo使用教程/index.html">
+<meta property="og:title" content="hexo部署出现的一些问题">
+<meta property="og:url" content="http://yoursite.com/2019/08/24/hexo部署出现的一些问题/index.html">
 <meta property="og:site_name" content="Wenshuai&#39;s Blog">
 <meta property="og:description" content="link方式（自定义方式）：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-04T14:51:13.913Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/24/my2wTg.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/24/my2d0S.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/24/my2am8.png">
+<meta property="og:updated_time" content="2019-10-23T10:59:40.506Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo使用说明">
+<meta name="twitter:title" content="hexo部署出现的一些问题">
 <meta name="twitter:description" content="link方式（自定义方式）：">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/24/my2wTg.png">
   
     <link rel="alternative" href="/atom.xml" title="Wenshuai&#39;s Blog" type="application/atom+xml">
   
@@ -266,14 +270,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo使用教程" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-hexo部署出现的一些问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      hexo使用说明
+      hexo部署出现的一些问题
     </h1>
   
 
@@ -285,8 +289,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/08/16/hexo使用教程/" class="archive-article-date">
-        <time datetime="2019-08-16T08:59:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
+<a href="/2019/08/24/hexo部署出现的一些问题/" class="archive-article-date">
+        <time datetime="2019-08-24T08:53:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-24</time>
 </a>
 
   
@@ -299,7 +303,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">218字</span>
+      <span class="post-count">111字</span>
     </span>
   </span>
 
@@ -320,21 +324,16 @@
   <div class="article-entry" itemprop="articleBody">
     
     <p>link方式（自定义方式）： </p>
-<a id="more"></a>     
+<a id="more"></a> 
 
 
-<p>hexo new “postName” #新建文章<br>hexo generate #生成静态页面至public目录<br>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #部署到GitHub<br>hexo help  # 查看帮助<br>hexo version  #查看Hexo的版本</p>
-<p>hexo n == hexo new<br>hexo g == hexo generate<br>hexo s == hexo server<br>hexo d == hexo deploy</p>
-<p>hexo s -g #生成并本地预览<br>hexo d -g #生成并上传</p>
-<p>换行<br>1在末尾添加两个空格回车<br>2写完markdown文件后，只需要按Ctrl+Alt+A,将会自动在所有行尾添加Markdown风格的换行(两个空格)</p>
-<p>加粗<br>在内容外面添加 ** **<br>例如：<strong>加粗</strong></p>
-<p>斜体<br>在内容外面添加 * <em>，<br>例如：*斜体</em></p>
-<p>自定义字体大小<br><font size="4">字体</font></p>
-<p>展示一部分文章<br>link方式（自定义方式）： </p>
-<!--more-->   
-
-
-<p>插入程序代码块的方式有两种：<br>使用反串号 ` (~键)<br>使用缩进 (Tab)<br><code>cscvsf</code></p>
+<p><font size="6">问题1：</font><br>ERROR Plugin load failed: hexo-generator-json-content<br>Error: EISDIR: illegal operation on a directory, read<br>EISDIR: illegal operation on a directory, read<br>INFO  Deleted database.<br>ERROR插件加载失败：hexo-generator-json-content<br>错误：EISDIR：对目录进行非法操作，读取<br>EISDIR：对目录进行非法操作，阅读<br>INFO已删除数据库。</p>
+<p><a href="https://imgchr.com/i/my2wTg" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/08/24/my2wTg.png" alt="my2wTg.png"></a></p>
+<p>执行： cnpm i hexo-generator-json-content –save</p>
+<p><a href="https://imgchr.com/i/my2d0S" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/08/24/my2d0S.png" alt="my2d0S.png"></a></p>
+<p><font size="6">问题2：</font><br>ERROR Deployer not fount:git<br>执行： cnpm install –save hexo-deployer-git</p>
+<p><a href="https://imgchr.com/i/my2am8" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/08/24/my2am8.png" alt="my2am8.png"></a></p>
+<p><small>字体变小</small><br><big>字体变大</big></p>
 
     
 
@@ -381,7 +380,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://yoursite.com/2019/08/16/hexo使用教程/" title="hexo使用说明" target="_blank">http://yoursite.com/2019/08/16/hexo使用教程/</a>
+          <a href="http://yoursite.com/2019/08/24/hexo部署出现的一些问题/" title="hexo部署出现的一些问题" target="_blank">http://yoursite.com/2019/08/24/hexo部署出现的一些问题/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -400,7 +399,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -456,7 +455,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/16/hexo使用教程/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/24/hexo部署出现的一些问题/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -471,18 +470,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/08/24/hexo部署出现的一些问题/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/24/java-集合 /" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          hexo部署出现的一些问题
+          ‘java-集合’
         
       </div>
     </a>
   
   
-    <a href="/2019/08/16/jdk环境变量配置/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">jdk环境变量配置</div>
+    <a href="/2019/08/16/hexo使用教程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo使用说明</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -509,7 +508,7 @@
 
 
 
-<div id="SOHUCS" sid="hexo使用教程" ></div> 
+<div id="SOHUCS" sid="hexo部署出现的一些问题" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -530,9 +529,9 @@
     <script src="/lib/giteement.browser.js"></script>
   
   <script>
-  <!-- id: "hexo使用说明" -->
+  <!-- id: "hexo部署出现的一些问题" -->
   var giteement = new Giteement({
-    id: '20190816165954',
+    id: '20190824165322',
     owner: '',
     repo: '',
     backcall_uri: '',
