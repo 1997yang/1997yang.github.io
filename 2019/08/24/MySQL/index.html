@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Wenshuai&#39;s Blog">
 <meta property="og:description" content="link方式（自定义方式）：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-23T11:11:40.803Z">
+<meta property="og:updated_time" content="2019-10-24T15:34:08.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL">
 <meta name="twitter:description" content="link方式（自定义方式）：">
@@ -299,7 +299,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">4.9k字</span>
+      <span class="post-count">5.6k字</span>
     </span>
   </span>
 
@@ -308,7 +308,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">20分</span>
+      <span class="post-count">22分</span>
     </span>
   </span>
 </div>
@@ -322,7 +322,7 @@
     <p>link方式（自定义方式）： </p>
 <a id="more"></a>
 
-
+<!-- TOC -->autoauto- [一、打开/关闭服务及登录](#一打开关闭服务及登录)auto    - [打开/关闭](#打开关闭)auto    - [MySQL服务的登录和退出](#mysql服务的登录和退出)auto    - [环境变量配置](#环境变量配置)auto- [二、mysql的基本语法](#二mysql的基本语法)auto- [三、MySQL的语法规范](#三mysql的语法规范)auto- [四、 DQL语言](#四-dql语言)auto    - [基础查询](#基础查询)auto    - [条件查询](#条件查询)auto    - [模糊查询:](#模糊查询)auto    - [排序查询](#排序查询)auto    - [常见函数](#常见函数)auto- [可以获取指定的部分，年、月、日、小时、分钟、秒](#可以获取指定的部分年月日小时分钟秒)auto- [案例:查询员工的工资的情况](#案例查询员工的工资的情况)auto- [2.](#2)auto- [3.](#3)auto- [4.](#4)auto- [5.](#5)auto    - [分组查询](#分组查询)auto- [①查询每个长度的员工个数](#①查询每个长度的员工个数)auto- [②添加筛选条件](#②添加筛选条件)auto    - [连接查询](#连接查询)auto- [5、可以加分组?](#5可以加分组)auto- [案例1:查询每个城市的部门个数](#案例1查询每个城市的部门个数)auto- [6、可以加排序](#6可以加排序)auto- [案例:查询每个工种的工种名和员工的个数，并且按员工个数降序](#案例查询每个工种的工种名和员工的个数并且按员工个数降序)auto- [7、可以实现三表连接?](#7可以实现三表连接)auto- [案例:查询员工名、部门名和所在的城市](#案例查询员工名部门名和所在的城市)auto- [案例1:查询员工的工资和工资级别](#案例1查询员工的工资和工资级别)auto- [案例:查询员工名和上级的名称](#案例查询员工名和上级的名称)auto- [排序查询](#排序查询-1)autoauto<!-- /TOC -->
 <p>MySQL GUI Tools<br>phpMyAdmin<br>SQLYog<br>Navicat for MySQL  </p>
 <p>create database mybatis_test;<br>use mybatis_test; </p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> <span class="keyword">if</span> <span class="keyword">exists</span> <span class="keyword">user</span>;  </span><br><span class="line"> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">user</span>(<span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</span><br><span class="line"> username <span class="built_in">varchar</span>(<span class="number">120</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"> <span class="keyword">password</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"> gender <span class="built_in">varchar</span>(<span class="number">5</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"> email <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"> province <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"> city <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">collate</span> utf8_bin <span class="keyword">default</span> <span class="literal">null</span>,</span><br><span class="line"> birthday <span class="built_in">date</span> <span class="keyword">default</span> <span class="literal">null</span>,primary <span class="keyword">key</span> (<span class="keyword">id</span>))</span><br><span class="line"><span class="keyword">engine</span>=<span class="keyword">innodb</span> <span class="keyword">default</span> <span class="keyword">charset</span>=utf8 <span class="keyword">collate</span>=utf8_bin;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span>(<span class="keyword">id</span>,username,<span class="keyword">password</span>,gender,email,province,city,birthday)<span class="keyword">values</span></span><br><span class="line">(<span class="number">1</span>,张三,<span class="number">111</span>,男,<span class="number">1111</span>@<span class="number">126.</span>com,河南省,郑州市,<span class="number">1991</span><span class="number">-04</span><span class="number">-23</span>),</span><br><span class="line">(<span class="number">2</span>,李四,<span class="number">222</span>,男,<span class="number">2222</span>@<span class="number">126.</span>com,河北省,邯郸市,<span class="number">1989</span><span class="number">-10</span><span class="number">-13</span>),</span><br><span class="line">(<span class="number">3</span>,刘丽,<span class="number">333</span>,女,<span class="number">3333</span>@<span class="number">126.</span>com,江苏省,苏州市,<span class="number">1994</span><span class="number">-06</span><span class="number">-09</span>),</span><br><span class="line">(<span class="number">4</span>,李丽,<span class="number">444</span>,女,<span class="number">4444</span>@<span class="number">126.</span>com,四川省,成都市,<span class="number">1992</span><span class="number">-11</span><span class="number">-07</span>);</span><br></pre></td></tr></table></figure>
@@ -341,18 +341,18 @@
 <p>图形用户界面<br>SQLyog-10.Q.0-0客户端   /小海豚<br>mysql-5.5.15-win32.msi<br>Navicat Premium_11.0.10.exe  /猫  </p>
 <p>Name: any<br>key: dd987f34-f358-4894-bd0f-21f3f04be9c1<br>Name: any<br>key: dd987f34-f358-4894-bd0f-21f3f04be9c1  </p>
 <p>SQLyog<br>名字：mysql01</p>
-<p>F9显示运行结果</p>
-<h1 id="四、mysql查询常量、表达式"><a href="#四、mysql查询常量、表达式" class="headerlink" title="四、mysql查询常量、表达式"></a>四、mysql查询常量、表达式</h1><p>基础查询<br>语法：<br>select 查询列表 from 表名;<br>查询表中所有字段（查询结果与表中一样）<br>select * from employees;<br>类似于：System.out.println(打印东西)  </p>
+<p>F9显示运行结果<br>mysql查询常量、表达式</p>
+<h1 id="四、-DQL语言"><a href="#四、-DQL语言" class="headerlink" title="四、 DQL语言"></a>四、 DQL语言</h1><h2 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h2><p>语法：<br>select 查询列表 from 表名;<br>查询表中所有字段（查询结果与表中一样）<br>select * from employees;<br>类似于：System.out.println(打印东西)  </p>
 <p>特点:<br>1、查询列表可以是：表中的字段、常量值、表达式、函数<br>2、查询结果是一个虚拟的表格<br>查询常量值<br>select 常量;<br>字符（MySQL没有字符串概念）<br>字符用 单引号<br>查询表达式<br>select 表达式;<br>select 100*100;<br>select 100%98;<br>查询函数（方法）<br>select version();  </p>
-<h2 id="起别名"><a href="#起别名" class="headerlink" title="起别名"></a>起别名</h2><p>方法一: 使用as<br>① 便于理解<br>② 区分<br>select 100%98 as 结果;<br>select last_name as 姓 from employees;<br>方法二：使用空格<br>select last_name 姓 from employees;</p>
+<p>起别名<br>方法一: 使用as<br>① 便于理解<br>② 区分<br>select 100%98 as 结果;<br>select last_name as 姓 from employees;<br>方法二：使用空格<br>select last_name 姓 from employees;</p>
 <p>(注意：别名中不要有符号，如果有加双引号)</p>
-<h2 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h2><p>select distinct department_id from employees;</p>
-<h2 id="号的作用"><a href="#号的作用" class="headerlink" title="+号的作用"></a>+号的作用</h2><p>java<br>selecct last_name+first_name as 姓名 from employees;<br>java中+号作用<br>① 运算符，两个操作数都为数值型<br>②连接符，只要有一个操作数为字符数</p>
+<p>去重<br>select distinct department_id from employees;</p>
+<p>+号的作用<br>java<br>selecct last_name+first_name as 姓名 from employees;<br>java中+号作用<br>① 运算符，两个操作数都为数值型<br>②连接符，只要有一个操作数为字符数</p>
 <p>mysql中的+号<br>只有一个功能：运算符<br>select 100+90; 两个操作数都为数值型，则做加法运算<br>select ‘123’+90;其中一 方为字符型，试图将字符型数值转换成数值型<br>如果转换成功，则继续做加法运算<br>失败，将字符数值转换为0<br>select null+10; 只有其中一方为null,则结果肯定为null</p>
-<h2 id="拼接concat"><a href="#拼接concat" class="headerlink" title="拼接concat"></a>拼接concat</h2><p>查询两个字段并拼接一个字段，并显示结果为姓名<br>select concat(last_name,first_name) as 姓名 from employees;</p>
+<p>拼接concat<br>查询两个字段并拼接一个字段，并显示结果为姓名<br>select concat(last_name,first_name) as 姓名 from employees;</p>
 <p>显示表结构<br>desc 降序排列<br>desc 表;</p>
 <p>ifnull</p>
-<h1 id="五、查询语句"><a href="#五、查询语句" class="headerlink" title="五、查询语句"></a>五、查询语句</h1><h2 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h2><p>语法：<br>select 查询列表 from 表名 where 筛选条件;</p>
+<h2 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h2><p>语法：<br>select 查询列表 from 表名 where 筛选条件;</p>
 <p>筛选条件：<br>条件运算符：&gt;&lt; != &lt;&gt; &gt;= &lt;=<br>查询员工工资&gt;10000的员工工资<br>select * form employees where salary&gt;10000;</p>
 <p>逻辑表达： &amp;&amp;和and:两个条件都为true，结果为true，反之false<br>||或or:只有有一个条件true，结果为true，反之为false<br>!或not：如果连接的条件本身为false,结果为true,反之为false<br>查询工资z在10000到20000之间的员工名、工资以及奖金<br>select last_name,salary,commission_pct from employees where salary&gt;=10000 and salary&lt;=20000;</p>
 <h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询:"></a>模糊查询:</h2><p>like<br>①一般和通配符搭配使用<br>%任意多个字符，包含0个字符<br><em>任意单个字符<br>通配符：<br>%任意多个字符<br>查询员工中包含字符a的员工信息<br>select * from employees where last_name like ‘%a%’;<br>当出现多个通配符时，可以对符号（转义） 例如：/</em></p>
@@ -373,9 +373,9 @@
 
 <h2 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h2><p>语法： select 查询列表 from 表 【where 筛选条件】 order by 排序列表 【asc|desc】<br>asc代表升序，desc代表降序，如果不写，默认升序<br>order by子句中可以支持单个字段、多个字段、表达式、函数、别名<br>order by子句一般是放在查询语句的最后面，limit子句除外</p>
 <p>select * from employees order by salary desc;  从高到低<br>select * from employees order by salary asc;   从低到高/asc也可以省去</p>
-<h1 id="六、函数"><a href="#六、函数" class="headerlink" title="六、函数"></a>六、函数</h1><p>常见函数<br>概念：类似与java的方法，将一组逻辑语句封装在方法体中，对外暴露方法名<br>好处：1隐藏了实现细节，2提高代码的重用性<br>调用：select 函数名() 【from 表】;<br>特点：1叫什么（函数名），2干什么（函数功能）<br>分类：<br>    1单行函数<br>    如 concat,length,infull等<br>    2分组函数<br>    功能：做统计使用，又称为统计函数、聚合函数、组函数</p>
+<h2 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h2><p>常见函数<br>概念：类似与java的方法，将一组逻辑语句封装在方法体中，对外暴露方法名<br>好处：1隐藏了实现细节，2提高代码的重用性<br>调用：select 函数名() 【from 表】;<br>特点：1叫什么（函数名），2干什么（函数功能）<br>分类：<br>    1单行函数<br>    如 concat,length,infull等<br>    2分组函数<br>    功能：做统计使用，又称为统计函数、聚合函数、组函数</p>
 <p>延伸概念<br>字符集：<br>展示字符集<br>show variables like ‘%char%’<br>utf8：一个字母占1个字节，一个汉字占3个字节<br>GBK：一个字母占1个字节，一个汉字占2个字节</p>
-<h2 id="1-字符函数"><a href="#1-字符函数" class="headerlink" title="1 字符函数"></a>1 字符函数</h2><p>1 length 获取参数值的【字节】个数<br>select length(‘john’);</p>
+<p>1 字符函数<br>1 length 获取参数值的【字节】个数<br>select length(‘john’);</p>
 <p>2 concat 拼接字符串<br>select concat(last_name,’_’,first_name) as 姓名 from employees;</p>
 <p>3 upper,lower 变大，变小写<br>select upper(‘john’);<br>select lower(‘joHn’);</p>
 <p>4 substr、substring 截取字符串<br>注意：索引从1开始<br>截取从指定索引处后面所有字符<br>select substr(‘李莫愁爱上路展元’,7) out_put;<br>截取从指定索引处指定字符长度的字符<br>select substr(‘李莫愁爱上路展元’,7,3) out_put;</p>
@@ -384,20 +384,20 @@
 <p>7 lpad 用指定的字符实现左填充指定长度<br>select lpad(‘殷素素’,10,’*’) as out_put;</p>
 <p>8 rpad 用指定的字符实现右填充指定长度<br>select rpad(‘殷素素’,15,’ab’) as out_put;</p>
 <p>9 replace 替换<br>select replace(‘张无忌爱上了周芷若’,’周芷若’,’赵敏’) as out_put;</p>
-<h2 id="2-数学函数"><a href="#2-数学函数" class="headerlink" title="2 数学函数"></a>2 数学函数</h2><p>1 round 四舍五入<br>select round(1.65);</p>
+<p>2 数学函数<br>1 round 四舍五入<br>select round(1.65);</p>
 <p>2 ceil 向上取整,返回&gt;=该参数的最小整数<br>select ceil(1.00);</p>
 <p>3 floor 向下取整,返回&gt;=该参数的最大整数<br>select floor(9.99);</p>
 <p>4 truncate 截断 小数点后保留几位,非四舍五入<br>select truncate(1.6999,1);</p>
 <p>5 mod取余<br>select modA(10,3);</p>
-<h2 id="3-日期函数"><a href="#3-日期函数" class="headerlink" title="3 日期函数"></a>3 日期函数</h2><p>1 now返回当前系统日期+时间<br>select now();</p>
+<p>3 日期函数<br>1 now返回当前系统日期+时间<br>select now();</p>
 <p>2 curdate返回当前系统日期，不包含时间<br>select curdate();</p>
 <p>3 curtime 返回当前时间，不包含日期<br>select curtime();</p>
 <p>4 str_to_date 将日期格式的字符转换成指定格式日期<br>格式符    | 功能<br>——– | —–<br>%Y  | 四位的年份<br>%y  | 二位的年份<br>%m  | 月份（01，02….12)<br>%c  | 月份（1，2……12)<br>%d  | 日(01,02)<br>%H  | 小时（24小时制）<br>%h  | 小时（12小时制）<br>%i  | 分钟（00，01….59）<br>%s  | 秒(00,01…59)</p>
 <p>select str_to_date(‘1997-3-2’,’%Y-%c-%d’) as out_put;</p>
 <p>5 date_format:将日期转换成字符<br>select date_format(now(),’y%年%m月%d日’) as out_put;</p>
 <p>#可以获取指定的部分，年、月、日、小时、分钟、秒<br>SELECT YEAR (NOW())年;<br>SELECT YEAR(‘1998-1-1’) 年;<br>SELECT<br>YEAR (hiredate)年FROM employees;<br>SELECT MONTH (NOW())月;<br>SELECT MONTHNAME (NOW() )月 ;</p>
-<h2 id="4-其他函数"><a href="#4-其他函数" class="headerlink" title="4 其他函数"></a>4 其他函数</h2><p>SELECT VERSION();<br>SELECT DATABASE();<br>SELECT USER();</p>
-<h2 id="5-流程控制函数"><a href="#5-流程控制函数" class="headerlink" title="5 流程控制函数"></a>5 流程控制函数</h2><p>1 if函数：if else的效果<br>select if(10&lt;5),’大’,’小’);</p>
+<p>4 其他函数<br>SELECT VERSION();<br>SELECT DATABASE();<br>SELECT USER();</p>
+<p>5 流程控制函数<br>1 if函数：if else的效果<br>select if(10&lt;5),’大’,’小’);</p>
 <p>2 case函数的使用一：switch case的效果<br>case 要判断的字段或表达式<br>when 常量1 then 要显示的值或语句2;<br>when 常量2 then 要显示的值或语句2;<br>…<br>else 要显示的值n或语句n;<br>end</p>
 <p>#案例:查询员工的工资的情况<br>如果工资&gt;20000,显示A级别<br>如果工资&gt;15000,显示B级别<br>如果工资&gt;10000，显示c级别<br>否则，显示D级别</p>
 <p>select salary,<br>case<br>when salary&gt;20000 then ‘A’<br>when salary&gt;15000 then ‘B’<br>when salary&gt;10000 then ‘C’<br>else ‘D’<br>end as 工资级别<br>from employees;</p>
@@ -414,21 +414,18 @@
 <p>2、参数支持哪些类型<br>select sum()<br>3、忽略null值</p>
 <p>4、和distinct搭配<br>select sum(distinct salary),sum(salary) from employees;</p>
 <p>5、count函数的详细介绍<br>select count(salary) from employees;<br>select count(<em>) from employees;<br>select count(1) from employees;<br>效率：<br>myisam存储引擎下，count(</em>)的效率高<br>innode存储引擎下，count(*)和count(1)效率差不多，比count(字段)要高一些<br>6、和分组函数一同查询的字段有限制</p>
-<p>三、分组查询<br>语法：<br>     select 分组函数,列(要求出现在group by的后面)<br>     from 表<br>     【where 筛选条件】<br>     group by 分组的列表<br>     【order by 子句】<br>注意：查询列表必须特殊，要求是分组函数和group by后出现的字段<br>特点：<br>1、分组查询中的筛选条件分为两类<br>           数据源         位置                 关键字<br>分组前筛选  原始表         group by子句的前面    where<br>分组后筛选  分组后的结果集  group by子句的后面    having<br>①分组函数做条件肯定是放在having子句中<br>②能用分组前筛选的，就优先考虑使用分组前筛选<br>2、group by子句支持单个字段分组，多个字段分组（多个字段之间用逗号隔开没有顺序要求），<br>3、也可以添加排序（排序放在整个分组查询的后面）</p>
+<h2 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h2><p>语法：<br>     select 分组函数,列(要求出现在group by的后面)<br>     from 表<br>     【where 筛选条件】<br>     group by 分组的列表<br>     【order by 子句】<br>注意：查询列表必须特殊，要求是分组函数和group by后出现的字段<br>特点：<br>1、分组查询中的筛选条件分为两类<br>           数据源         位置                 关键字<br>分组前筛选  原始表         group by子句的前面    where<br>分组后筛选  分组后的结果集  group by子句的后面    having<br>①分组函数做条件肯定是放在having子句中<br>②能用分组前筛选的，就优先考虑使用分组前筛选<br>2、group by子句支持单个字段分组，多个字段分组（多个字段之间用逗号隔开没有顺序要求），<br>3、也可以添加排序（排序放在整个分组查询的后面）</p>
 <p>引入：查询每个部门的平均工资<br>select avg(salary) from employees;</p>
 <p>简单的分组查询<br>查询每个工种的最高工资<br>select max(salary),job_id from employees group by job_id;<br>查询每个位置上的部门个数<br>select count(*),location_id from departments group by location_id;</p>
 <p>添加筛选条件<br>查询邮箱中包含a字符的，每个部门的平均工资<br>select avg(salary),department_id from employees where email like ‘%a%’ group by department_id’;<br>查询有奖金的每个领导手下员工的最高工资<br>select max(salary),manager_id from employees where commission_pct is not null group by manager_id;</p>
 <p>添加复杂的筛选条件<br>查询那个部门的员工个数&gt;2<br>SELECT COUNT (<em>) , department_id<br>FROM employees<br>GROUP<br>BY<br>department_id<br>HAVING COUNT(</em>)&gt;2;<br>案例2:查询每个工种有奖金的员工的最高工资&gt;12000的工种编号和最高工资<br>①查询每个工种有奖金的员工的最高工资<br>SELECT MAX(salary),job_ Id<br>FROM employees<br>where commission_pct is not null<br>group by job_id;</p>
 <p>②根据①结果继续筛选，最高工资&gt;12000<br>SELECT MAX(salary),job_ id<br>FROM employees<br>WHERE commission pct IS NOT NULL<br>GROUP BY job_id<br>HAVING MAX (salary)&gt; 12000;</p>
-<p>#按表达式或函数分组</p>
-<p>#案例:按员工姓名的长度分组，查询每-组的员工个数，筛选员工个数&gt;5的有哪些</p>
+<p>按表达式或函数分组<br>案例:按员工姓名的长度分组，查询每-组的员工个数，筛选员工个数&gt;5的有哪些</p>
 <p>#①查询每个长度的员工个数<br>SELECT COUNT(*),LENGTH(last_ name) len_name<br>FROM employees<br>GROUP BY LENGTH (last name);</p>
 <p>#②添加筛选条件<br>SELECT COUNT(<em>),LENGTH(last_ name) len_name<br>FROM employees<br>GROUP BY LENGTH (last name)<br>having count(</em>)&gt;5;</p>
-<p>#按多个字段分组</p>
-<p>#案例:查询每个部门每个工种的员工的平均工资<br>SELECT AVG(salary),department_id,job_id<br>FROM employees<br>GROUP BY job_id,department_id;</p>
-<p>#添加排序</p>
-<p>##案例:查询每个部门每个工种的员工的平均工资，并且按平均工资的高低显示<br>SELECT AVG (salary),department_ id,job_ id<br>FROM employees<br>WHERE department_id IS NOT NULL<br>GROUP BY job_id,department_id<br>HAVING AVG (salary)&gt; 10000<br>ORDER BY AVG (salary) DESC;</p>
-<p>连接查询<br>含义：又称多表查询，当查询的字段来自于多个表时，就会用到连接查询<br>笛卡尔乘积现象：表1有m行，表2有n行，结果=m*n行<br>发视原因：没有有效的连接条件<br>如何避免：添加有效的连接条件<br>分类：<br>     按年代分类:<br>       sq192标准：仅仅支持内连接<br>       sq199标准[推荐]：支持内连接+外连接（左外+右外）+交叉连接<br>     按功能分类:<br>        内连接:<br>          等值连接<br>          非等值连接<br>          自连接<br>        外连接:<br>          左外连接<br>          右外连接<br>          全外连接<br>        交叉连接</p>
+<p>按多个字段分组<br>案例:查询每个部门每个工种的员工的平均工资<br>SELECT AVG(salary),department_id,job_id<br>FROM employees<br>GROUP BY job_id,department_id;</p>
+<p>添加排序<br>案例:查询每个部门每个工种的员工的平均工资，并且按平均工资的高低显示<br>SELECT AVG (salary),department_ id,job_ id<br>FROM employees<br>WHERE department_id IS NOT NULL<br>GROUP BY job_id,department_id<br>HAVING AVG (salary)&gt; 10000<br>ORDER BY AVG (salary) DESC;</p>
+<h2 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h2><p>含义：又称多表查询，当查询的字段来自于多个表时，就会用到连接查询<br>笛卡尔乘积现象：表1有m行，表2有n行，结果=m*n行<br>发视原因：没有有效的连接条件<br>如何避免：添加有效的连接条件<br>分类：<br>     按年代分类:<br>       sq192标准：仅仅支持内连接<br>       sq199标准[推荐]：支持内连接+外连接（左外+右外）+交叉连接<br>     按功能分类:<br>        内连接:<br>          等值连接<br>          非等值连接<br>          自连接<br>        外连接:<br>          左外连接<br>          右外连接<br>          全外连接<br>        交叉连接</p>
 <p>select<em>from beauty;<br>select</em>from boys;</p>
 <p>一、sql92标准<br>1、等值连接<br>①多表等值连接的结果为多表的交集部分<br>②n表连接，至少需要n-1个连接条件<br>③多表的顺序没有要求<br>④一般需要为表起别名<br>⑤可以搭配前面介绍的所有子句使用，比如排序、分组、筛选</p>
 <p>查询女神名和对应的男神名<br>select name,boyname from boys,beayty<br>where beauty.boyfriend_id=boys.id;<br>2、为表起别名<br>提高语句的简洁度<br>区分多个重名的字段<br>注意:如果为表起了别名，则查询的字段就不能使用原来的表名去限定</p>
@@ -445,6 +442,8 @@
 <p>#案例1:查询员工的工资和工资级别<br>SELECT salary, grade_ level<br>FROM employees e, job_ grades g<br>WHERE salary BETWEEN<br>g.、lowest_ sal AND g.. highest sal、;</p>
 <p>3、自连接</p>
 <p>#案例:查询员工名和上级的名称<br>SELECT e. employee_ id,e.last_ name, m. employee_ id,m.last_ name<br>FROM employees e, employees m<br>WHERE e. manager_ id’=m. 、employee_ idi ;|</p>
+<h1 id="排序查询-1"><a href="#排序查询-1" class="headerlink" title="排序查询"></a>排序查询</h1><p>语法： select 查询列表 from 表 筛选条件 order by 排序列表<br>特点：<br>1、asc：升序，如果不写默认升序<br>desc：降序<br>2、排序列表 支持 单个字段、多个字段、函数、表达式、别名<br>3、order by的位置一般放在查询语句的最后（除了limit语句之外）</p>
+<p>与MySQL的第一次亲密接触<br>DQL语言<br>基础查询<br>条件查询<br>排序查询<br>常见函数<br>分组查询<br>连接查询<br>子查询<br>分页查询<br>联合查询<br>查询总结</p>
 
     
 
@@ -581,18 +580,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/08/24/‘hexo添加动漫人物’/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/24/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          hexo添加动漫人物
+          Hello World
         
       </div>
     </a>
   
   
-    <a href="/2019/08/24/vscode使用/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vscode使用</div>
+    <a href="/2019/08/24/readme/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">readme</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -813,15 +812,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -829,11 +824,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">归档</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
