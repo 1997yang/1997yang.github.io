@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Linux基本操作语法 | Wenshuai&#39;s Blog</title>
+  <title>Linux操作系统基本知识和语法 | Wenshuai&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="link方式（自定义方式）：">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux基本操作语法">
+<meta property="og:title" content="Linux操作系统基本知识和语法">
 <meta property="og:url" content="http://yoursite.com/2019/08/10/Linux操作系统使用/index.html">
 <meta property="og:site_name" content="Wenshuai&#39;s Blog">
 <meta property="og:description" content="link方式（自定义方式）：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-15T15:06:37.340Z">
+<meta property="og:updated_time" content="2019-11-01T17:10:01.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux基本操作语法">
+<meta name="twitter:title" content="Linux操作系统基本知识和语法">
 <meta name="twitter:description" content="link方式（自定义方式）：">
   
     <link rel="alternative" href="/atom.xml" title="Wenshuai&#39;s Blog" type="application/atom+xml">
@@ -273,7 +273,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      Linux基本操作语法
+      Linux操作系统基本知识和语法
     </h1>
   
 
@@ -299,7 +299,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">5k字</span>
+      <span class="post-count">5.5k字</span>
     </span>
   </span>
 
@@ -308,7 +308,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">18分</span>
+      <span class="post-count">20分</span>
     </span>
   </span>
 </div>
@@ -321,9 +321,31 @@
     
     <p>link方式（自定义方式）：</p>
 <a id="more"></a>
+<!-- TOC -->
 
-<p>Linux操作系统使用</p>
-<h1 id="一、linux操作系统文件夹介绍"><a href="#一、linux操作系统文件夹介绍" class="headerlink" title="一、linux操作系统文件夹介绍"></a>一、linux操作系统文件夹介绍</h1><p>在Linux世界里，一切皆为文件<br>/bin  [usr/bin、usr/local/bin]<br>是binary的缩写，这个目录存放着最常见的命令<br>/sbin【/usr/sbin、/usr/local/sbin]<br>s就是super user的意思，这里存放着系统管理员使用的系统管理程序</p>
+<ul>
+<li><a href="#安装前必备">安装前必备</a></li>
+<li><a href="#linux操作系统文件夹介绍">linux操作系统文件夹介绍</a></li>
+<li><a href="#二vi和vim文本编译器">二、vi和vim文本编译器</a></li>
+<li><a href="#三开机重启登录注销">三、开机重启登录注销</a><ul>
+<li><a href="#关机重启命令">关机&amp;重启命令</a></li>
+</ul>
+</li>
+<li><a href="#用户管理">用户管理</a><ul>
+<li><a href="#用户和组的相关文件">用户和组的相关文件</a></li>
+</ul>
+</li>
+<li><a href="#指令帮助">指令帮助</a></li>
+<li><a href="#权限的基本介绍">权限的基本介绍</a></li>
+<li><a href="#分区基础知识">分区基础知识</a></li>
+</ul>
+<!-- /TOC -->
+
+<p><a href="https://www.bilibili.com/video/av21303002/" target="_blank" rel="noopener">来源</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg3NTE5MzU5OQ==&mid=2247484369&idx=1&sn=bd0f36238672fb4cdc9d90679ae18372&chksm=cec47641f9b3ff57e409e5a0f0584e05f8b58407409607d7789098463bc799242a8089dfee9c&scene=21#wechat_redirect" target="_blank" rel="noopener">面试</a></p>
+<h1 id="安装前必备"><a href="#安装前必备" class="headerlink" title="安装前必备"></a>安装前必备</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Linux查看ip地址  </span><br><span class="line">ifconfig -a</span><br><span class="line"></span><br><span class="line">chmod -R 777 linuxqq_2.0.0-b1-1024_x86_64.sh</span><br><span class="line">./linuxqq_2.0.0-b1-1024_x86_64.sh</span><br><span class="line"></span><br><span class="line">centos6.8 root yws1997@</span><br><span class="line">远程的Linux的ip地址192.168.245.128</span><br><span class="line"></span><br><span class="line">Linux查看版本当前操作系统内核信息</span><br><span class="line">uname -a</span><br><span class="line">Linux hadoop 2.6.32-642.el6.x86_64 #1 SMP Tue May 10 17:27:01 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</span><br><span class="line"></span><br><span class="line">Linux查看当前操作系统版本信息</span><br><span class="line">cat /proc/version</span><br><span class="line">Linux version 2.6.32-642.el6.x86_64 (mockbuild@worker1.bsys.centos.org) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-17) (GCC) ) #1 SMP Tue May 10 17:27:01 UTC 2016</span><br><span class="line"></span><br><span class="line">Linux查看版本当前操作系统发行版信息</span><br><span class="line">cat /etc/redhat-release   cat /etc/issue </span><br><span class="line">CentOS release 6.8 (Final)</span><br><span class="line"></span><br><span class="line">Linux查看cpu相关信息，包括型号、主频、内核信息等</span><br><span class="line">cat /proc/cpuinfo </span><br><span class="line"></span><br><span class="line">Xshell是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。Xshell 通过互联网到远程主机的安全连接以及它创新性的设计和特色帮助用户在复杂的网络环境中享受他们的工作。   </span><br><span class="line">传输文件：  </span><br><span class="line">WinSCP是一个Windows环境下使用SSH的开源图形化SFTP客户端。同时支持SCP协议。它的主要功能就是在本地与远程计算机间安全的复制文件。.winscp也可以链接其他系统,比如linux系统   </span><br><span class="line">Xftp是一个功能强大的SFTP、FTP 文件传输软件。使用了 Xftp 以后，MS Windows 用户能安全地在 UNIX/Linux 和 Windows PC 之间传输文件。</span><br><span class="line">``` </span><br><span class="line"># linux操作系统文件夹介绍</span><br></pre></td></tr></table></figure>
+
+<p>在Linux世界里，一切皆为文件<br>/bin  [usr/bin、usr/local/bin]<br>是binary的缩写，这个目录存放着最常见的命令<br>/sbin[/usr/sbin、/usr/local/sbin]<br>s就是super user的意思，这里存放着系统管理员使用的系统管理程序</p>
 <p>/home<br>存放着普通用户的主目录，在Linux 中每个用户都有一个自己的目录，一般该目录是以用户的账号来命名</p>
 <p>/root<br>该目录为系统管理员，也称做超级权限者的用户主目录</p>
 <p>/lib<br>系统开机所需要的最基本的动态连接共享库，其作用类似于Windows里的DLL文件，几乎所有的应用程序都需要用到这些共享库</p>
@@ -341,9 +363,25 @@
 <p>/usr/local<br>这是另一个给主机额外安装软件所安装的目录，一般通过编译源码方式安装的程序</p>
 <p>/var<br>存放在不断扩充着的东西，习惯将经常被修改的目录放在这个目录下</p>
 <p>/selinux[security-enhanced linux]<br>SElinux是一种 安全子系统，它能控制程序只能访问特定文件  </p>
-<h1 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h1><p>1、vi和vim快捷键<br>拷贝当前行 yy,拷贝当前行向下5行 5yy，并粘贴。<br>删除当前行 dd,删除当前行向下的5行 5dd<br>在文件中查找某个单词[命令行下/关键字，回车 查找，输入n就是查找下一个]<br>设置文件的行号，取消文件的行号。[命令行下：set nu和：set nonu]<br>编辑/etc/profile文件，使用快捷键到底文档的最末行[G]和最首行[gg]<br>在一个文件中输入”hello”,然后又撤销这个动作 u</p>
-<p>关机&amp;重启命令<br>shutdown -h now  立刻进行关机<br>shutdown -h 1    “hello,1分钟后重启<br>shutdown -r now  现在重启计算机<br>halt             关机<br>reboot           现在重启计算机<br>sync             把内存的数据同步到磁盘<br>注意：不管是重启系统，还是关闭系统，首要运行sync命令，把内存的数据写到磁盘中</p>
-<p>用户登录和注销<br>登录时尽量少用root账号登录，因为它是系统管理员，最大权限，避免操作失误。可以利用普通用户登录，登陆后再用“su-用户名”命令来切换成系统管理员身份。<br>在提示符下输入 logout 即可注销用户<br>注意：logout注销指令在图形运行级别无效，在运行级别3下有效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 二、vi和vim文本编译器</span><br></pre></td></tr></table></figure>
+
+<p>安装vmtools的步骤:</p>
+<ol>
+<li>进入centos</li>
+<li>点击vm菜单的-&gt;install vmware tools</li>
+<li>centos会出现一个vm的安装包</li>
+<li>点击右键解压,得到一个安装文件<br>s. 进入该vm解压的目录，该文件在/root/桌面/vmware-tools-distrib/下</li>
+<li>安装./vmware-install.pl</li>
+<li>全部使用默认设置即可</li>
+<li>需要reboot重新启动即可生效</li>
+</ol>
+<p>1、vi和vim快捷键<br>拷贝当前行 yy,拷贝当前行向下5行 5yy，并粘贴。<br>删除当前行 dd,删除当前行向下的5行 5dd<br>在文件中查找某个单词[命令行下/关键字，回车 查找，输入n就是查找下一个]<br>设置文件的行号，取消文件的行号。[命令行下：set nu和：set nonu]<br>编辑/etc/profile文件，使用快捷键到底文档的最末行[G]和最首行[gg]<br>在一个文件中输入”hello”,然后又撤销这个动作 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 三、开机重启登录注销</span><br><span class="line">## 关机&amp;重启命令</span><br></pre></td></tr></table></figure>
+
+<p>shutdown -h now  立刻进行关机<br>shutdown -h 1    “hello,1分钟后重启<br>shutdown -r now  现在重启计算机<br>halt             关机<br>reboot           现在重启计算机<br>sync             把内存的数据同步到磁盘<br>注意：不管是重启系统，还是关闭系统，首要运行sync命令，把内存的数据写到磁盘中</p>
+<p>登录时尽量少用root账号登录，因为它是系统管理员，最大权限，避免操作失误。可以利用普通用户登录，登陆后再用“su-用户名”命令来切换成系统管理员身份。<br>在提示符下输入 logout 即可注销用户<br>注意：logout注销指令在图形运行级别无效，在运行级别3下有效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 用户管理</span><br></pre></td></tr></table></figure>
+
 <p>添加用户<br>useradd [选项] 用户名<br>注意；<br>当创建用户成功后，会自动创建和用户同名的家目录。<br>也可以通过 useradd -d 目录   指定目录新的用户名，给新创建的用户指定家目录</p>
 <p>删除用户<br>userdel 用户名<br>注意；<br>userdel 用户名 仅仅删除了用户，没有删除家目录，若要同时删除用户和家目录使用<br>userdel -r 用户名<br>在删除用户时，我们一般不删除家目录</p>
 <p>当从权限高的用户切换到权限低的用户时，不需要输入密码，反之需要<br>当返回到原来用户时，使用exit指令。</p>
@@ -351,12 +389,15 @@
 <p>增加用户时直接加上组<br>useradd -g 用户组 用户名</p>
 <p>修改用户的组<br>usermod -g 用户组 用户名</p>
 <p>用户配置文件（用户信息） /etc/passwd<br>组配置文件（组信息）    /etc/group<br>口令配置信息（密码和登录信息，是加密） /etc/shadow</p>
-<p>用户和组的相关文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 用户和组的相关文件</span><br></pre></td></tr></table></figure>
+
 <p>/etc/passwd文件<br>用户配置文件（用户信息）记录用户的各种信息<br>每行含义：用户名：口令：用户表示号：组表示号：注释性描述：主目录：登录Shell<br>/etc/shadow文件<br>口令的配置文件<br>每行的含义：登录名：加密口令：最后一次修改时间：最小时间间距：最大时间间距：警告时间；不活动时间；失效时间：标志<br>/etc/group<br>组配置文件（组信息），记录Linux包含的组信息、<br>每行含义：组名：口令：组标识号；组内用户列表</p>
 <p>Linux系统运行级别<br>0：关机<br>1：单用户（找回丢失密码）<br>2：多用户无网络服务<br>3：多用户有网络服务<br>4：保留<br>5：图形界面<br>6：重启<br>系统的运行级别配置文件 /etc/inittab</p>
 <p>切换到指定运行级别<br>init[0123456]</p>
 <p>root密码丢失，找回<br>思路: 进入到单用户模式，然后修改root密码。因为进入单用户模式，root不需要密码就可以登录。<br>总结：<br>开机-&gt;在引导时输入回车键-&gt;看到一个界面输入e-&gt;看到一个新的界面，选中第二行(编辑<br>内核)在输入e-&gt;在这行最后输入1 ，再输入回车键-&gt;再次输入b，这时就会进入到单用户模式。<br>这时，我们就进入到单用户模式，使用passwd指令来修改root密码。</p>
-<p>指令帮助<br>当我们对某个指令不熟悉时，我们可以使用Linux提供的帮助指令来了解这个指令的使用方法。<br>man[命令或配置文件]（功能描述：获得帮助信息）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 指令帮助</span><br></pre></td></tr></table></figure>
+
+<p>当我们对某个指令不熟悉时，我们可以使用Linux提供的帮助指令来了解这个指令的使用方法。<br>man[命令或配置文件]（功能描述：获得帮助信息）</p>
 <p>help命令（功能描述：获得shell内置命令的帮助信息）</p>
 <p>文件目录类<br>pwd指令<br>pwd(功能描述：显示当前工作目录的绝对路径)<br>ls指令<br>ls [选项][目录或文件]<br>常用选项：<br>-a:显示当前目录所有的文件和目录，包括隐藏的<br>-l:以列表的方式显示信息<br>cd指令<br>cd(功能描述：切换到指定目录)<br>cd [参数]<br>常用参数<br>绝对路径和相对路径<br>cd`或者cd:回到自己的家目录<br>cd..回到当前目录的上一级目录</p>
 <p>mkdir指令<br>mkdir(用于创建目录)<br>mkdir [选项] 要创建的目录<br>常用选项<br>-p：创建多级目录</p>
@@ -394,7 +435,8 @@
 <p>其他组<br>除了文件的所有者和所在组的用户外，系统的其他用户都是文件的其它组</p>
 <p>改变用户所在组<br>在添加用户时，可以指定该用户添加到那个组中，同样的用root的管理权限可以改变某个用户所在的组</p>
 <p>改变用户所在组<br>usermod -g 组名 用户名<br>usermod -d 目录名 用户名   改变该用户登录的初始目录</p>
-<p>权限的基本介绍</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"># 权限的基本介绍</span><br></pre></td></tr></table></figure>
+
 <p>0-9位说明<br>0位    确定文件类型（d,-,l,c,b)<br>1-3位  确定所有者（该文件的所有者）拥有该文件的权限。–User<br>4-6位  确定所属组（同用户组的）拥有该文件的权限，—Group<br>7-9位  确定其他用户拥有该文件的权限 ===Other</p>
 <p>rwx权限详解<br>rwx作用到文件<br>[r]代表可读(read)：可以读取，查看<br>[w]代表可写(write)：可以修改，但是不代表删除该文件，删除一个文件的前提条件是对该文件所在的目录有写权限，才能删除该文件<br>[x]代表可执行(execute)：可以被执行</p>
 <p>rwx作用到目录<br>[r]代表可读(read)：可以读取，ls查看目录内容<br>[w]代表可写(write)：可以修改，目录内创建+删除+重命名目录<br>[x]代表可执行(execute)：可以进入该目录</p>
@@ -406,9 +448,11 @@
 <p>原理：<br>定时器调度我们的脚本或者代码=》机制 crontab 定时调度 脚本/代码完成某个任务（比如备份MySQL数据）</p>
 <p>任务的要求<br>设置任务调度文件：/etc/crontab<br>设置个人任务调度。执行 crontab -e命令<br>接着输入任务到调度文件<br>如：<em>/***</em>ls -l  /etc/tmp/to.txt命令</p>
 <p>步骤如下：<br>cron -e<br><em>/1***</em>ls-l/etc&gt;&gt;/tmp/to.txt<br>当保存退出后就程序<br>在每一分钟都会自动调用 ls-l/etc&gt;&gt;/tmp/to.txt</p>
-<p>分区基础知识<br>分区的方式:<br>1) mbr分区:<br>1.最多支持四个主分区<br>2.系统只能安装在主分区<br>3.扩展分区要占一个主分区<br>4.MBR最大只支持2TB，但拥有最好的兼容性<br>2) gt分区:<br>1.支持无限多个主分区(但操作系统可能限制，比如windows下最多128个分区)<br>2.最大支持18EB的大容量(EB=1024 PB，PB=1024 TB)<br>3.windows7 64位以后支持gtp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"># 分区基础知识</span><br></pre></td></tr></table></figure>
+
+<p>分区的方式:<br>1) mbr分区:<br>1.最多支持四个主分区<br>2.系统只能安装在主分区<br>3.扩展分区要占一个主分区<br>4.MBR最大只支持2TB，但拥有最好的兼容性<br>2) gt分区:<br>1.支持无限多个主分区(但操作系统可能限制，比如windows下最多128个分区)<br>2.最大支持18EB的大容量(EB=1024 PB，PB=1024 TB)<br>3.windows7 64位以后支持gtp</p>
 <p>Linux分区<br>原理介绍<br>1) Linux来说无论有几个分区，分给哪一-目录使用，它归根结底就只有一个根目录，一个独<br>立且唯- -的文件结构, Linux中每个分区都是用来组成整个文件系统的一部分。<br>2) Linux采用了一种叫“载入”的处理方法，它的整个文件系统中包含了一整套的文件和目;<br>录，且将一个分区和一个目录联系起来。这时要载入的一个分区将使它的存储空间在一<br>个目录下获得。</p>
-<p>硬盘说明<br>1) Linux硬盘分IDE硬盘和SCSI硬盘， 目前基本上是SCSI硬盘<br>2）对于IDE硬盘，驱动器标识符为“hdx<del>“,其中“hd”表明分区所在设备的类型，这里是指<br>IDE硬盘了。“x”为盘号(a为基本盘，b为基本从属盘，c为辅助主盘，d为辅助从属<br>盘)“。”代表分区，前四个分区用数字1到4表示，它们是主分区或扩展分区，从5开始就<br>是逻辑分区。例，hda3表示为第一个IDE硬 盘上的第三个主分区或扩展分区,hdb2表示为<br>第二个IDE硬盘上的第二个主分区或扩展分区。<br>3）对于SCSI硬盘则标识为“sdx</del>“, SCSI硬盘是用“sd”来表示分区所在设备的类型的，其余<br>则和IDE硬盘的表示方法一样。</p>
+<p>硬盘说明<br>1) Linux硬盘分IDE硬盘和SCSI硬盘， 目前基本上是SCSI硬盘<br>2）对于IDE硬盘，驱动器标识符为“hdx<del>“,其中“hd”表明分区所在设备的类型，这里是指<br>IDE硬盘了。“x”为盘号(a为基本盘，b为基本从属盘，c为辅助主盘，d为辅助从属<br>盘)“。”代表分区，前四个分区用数字1到4表示，它们是主分区或扩展分区，从5开始就<br>是逻辑分区。例，hda3表示为第一个IDE硬 盘上的第三个主分区或扩展分区,hdb2表示为<br>第二个IDE硬盘上的第二个主分区或扩展分区。<br>3）对于SCSI硬盘则标识为“sdx</del>“, SCSI硬盘是用“sd”来表示分区所在设备的类型的，其余<br>则和IDE硬盘的表示方法一样。<br>```</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=346095&auto=1&height=66"></iframe>
 
 
@@ -460,7 +504,7 @@ sid=346095&type=2&auto=1&width=320&height=66" width="340" height="86" allownetwo
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://yoursite.com/2019/08/10/Linux操作系统使用/" title="Linux基本操作语法" target="_blank">http://yoursite.com/2019/08/10/Linux操作系统使用/</a>
+          <a href="http://yoursite.com/2019/08/10/Linux操作系统使用/" title="Linux操作系统基本知识和语法" target="_blank">http://yoursite.com/2019/08/10/Linux操作系统使用/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -550,18 +594,18 @@ sid=346095&type=2&auto=1&width=320&height=66" width="340" height="86" allownetwo
 
 <nav id="article-nav">
   
-    <a href="/2019/08/10/calender使用实战/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/10/音乐、电影、电视剧、动漫推荐/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          calender使用实战
+          音乐、电影、电视剧、动漫推荐
         
       </div>
     </a>
   
   
-    <a href="/2019/08/10/java-基础知识/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java基础知识</div>
+    <a href="/2019/08/10/Java学习路线/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java学习路线</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -609,7 +653,7 @@ sid=346095&type=2&auto=1&width=320&height=66" width="340" height="86" allownetwo
     <script src="/lib/giteement.browser.js"></script>
   
   <script>
-  <!-- id: "Linux基本操作语法" -->
+  <!-- id: "Linux操作系统基本知识和语法" -->
   var giteement = new Giteement({
     id: '20190810165954',
     owner: '',
@@ -790,11 +834,11 @@ sid=346095&type=2&auto=1&width=320&height=66" width="340" height="86" allownetwo
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
